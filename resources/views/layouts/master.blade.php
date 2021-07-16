@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 <body>
 <!--nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -48,8 +49,18 @@
         <a class="nav-link" href="#products">Products</a>
         <a class="nav-link" href="#aboutUs">About Us</a>
         <a class="nav-link" href="#contact">Contact</a>
+      @auth
+        <span>Welcome, {{ auth()->user()->name }}</span>
+      <form action="/logout" method="POST">
+        @csrf
+        <button type="submit">Log out</button>
+      </form>
+      @else
+        <a class="nav-link" href="/login" style="color: green;">Login</a>
+        <a class="nav-link" href="/register" style="color: blue;">Register</a>
+      @endauth
       </nav>
-    </div>
+    </div> 
   </header>
   @yield('content')
   <footer class="mt-auto text-white-50">
@@ -101,6 +112,14 @@
     </div>
   </div>
 </footer-->
+@if(session()->has('success'))
+  <div x-data = "{ show: true }"
+    x-init = "setTimeout(() => show = false, 4000)"
+    x-show = "show"
+    style="background-color: green; position:fixed; bottom:1.5rem; right:0; border-radius:1.8rem; padding: 0.1rem 0.6rem; font-size: 0.8rem; text-align: center;">
+    <p>{{ session('success') }}</p>
+  </div>
+@endif
 </body>
 <script src="bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

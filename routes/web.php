@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ToiletPaper;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +17,8 @@ use App\Http\Controllers\ToiletPaper;
 */
 
 Route::get('/', [ToiletPaper::class, 'index'])->name('index');
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
+Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
+Route::post('sessions', [SessionsController::class, 'store']);
+Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');

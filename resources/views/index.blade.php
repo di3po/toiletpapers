@@ -34,7 +34,7 @@
   <main class="px-6" id="contact">
     <h1>Contact us</h1>
     <p class="lead">Address: Toiletpapers</p>
-    <p class="lead">E-mail: toiletpapers.@mail.com</p>
+    <p class="lead">E-mail: toiletpapers@mail.com</p>
     <p class="lead">Telephone: +1 (234) 5678</p>
   </main>
 
