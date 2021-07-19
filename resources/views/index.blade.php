@@ -26,6 +26,20 @@
   <main class="px-4" id="products">
     <h1>Choose your toiletpaper</h1>
     <p class="lead">We have various types of toiletpapers.</p>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img src="" alt="image place">
+              <div class="card-body">
+                <h5>Demo product</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <main class="px-5" id="aboutUs">
     <h1>Who we are?</h1>

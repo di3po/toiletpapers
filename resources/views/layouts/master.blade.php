@@ -41,20 +41,35 @@
 </nav-->
 <body class="d-flex h-100 text-center text-white bg-dark">
 <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
-  <header class="mb-auto">
+  <header class="mb-auto fixed-top bg-dark mt-0 px-1 m-0">
     <div>
-      <h3 class="float-md-start mb-0">Toiletpapers</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link active" aria-current="page" href="/">Home</a>
+      <a style="color:white;" href="/"><h3 class="float-md-start mb-0">Toiletpapers</h3></a>
+      <nav class="nav fixed-top nav-masthead justify-content-center float-md-end mb-auto-1">
         <a class="nav-link" href="#products">Products</a>
-        <a class="nav-link" href="#aboutUs">About Us</a>
+        <a class="nav-link" href="#aboutUs">About us</a>
         <a class="nav-link" href="#contact">Contact</a>
       @auth
-        <span>Welcome, {{ auth()->user()->name }}</span>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle mb-auto mx-2 btn-outline-primary text-white btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ auth()->user()->name }}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Orders</a></li>
+          <hr>
+          <form action="/logout" method="POST">
+            @csrf
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary btn-sm mx-auto" type="submit">Log out</button>
+            </div>
+          </form>  
+        </ul>
+      </div>
+      <!-- <span>Welcome, {{ auth()->user()->name }}</span>
       <form action="/logout" method="POST">
         @csrf
         <button type="submit">Log out</button>
-      </form>
+      </form>  -->
       @else
         <a class="nav-link" href="/login" style="color: green;">Login</a>
         <a class="nav-link" href="/register" style="color: blue;">Register</a>

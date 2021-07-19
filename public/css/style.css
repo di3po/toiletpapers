@@ -54,6 +54,15 @@ body {
     margin: 0.5%;
     line-height: 1;
 }
+.mb-auto-1{
+  position: inherit;
+  margin: 0.5%;
+  line-height: 1;
+}
+
+.nav-link:focus {
+  color: #e5e5e5;
+}
 /*
  * Header
  */
@@ -149,4 +158,5 @@ body {
       flex: 1;
     }
   }
+  
   
