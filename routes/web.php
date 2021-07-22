@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ToiletPaper;
 use App\Http\Controllers\RegisterController;
@@ -22,3 +23,4 @@ Route::post('register', [RegisterController::class, 'store'])->middleware('guest
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('sessions', [SessionsController::class, 'store']);
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
+Route::get('/products', [ProductsController::class, 'show']);

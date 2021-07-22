@@ -45,9 +45,9 @@
     <div>
       <a style="color:white;" href="/"><h3 class="float-md-start mb-0">Toiletpapers</h3></a>
       <nav class="nav fixed-top nav-masthead justify-content-center float-md-end mb-auto-1">
-        <a class="nav-link" href="#products">Products</a>
-        <a class="nav-link" href="#aboutUs">About us</a>
-        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="/products">Products</a>
+        <a class="nav-link" href="/aboutUs">About us</a>
+        <a class="nav-link" href="/contact">Contact</a>
       @auth
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle mb-auto mx-2 btn-outline-primary text-white btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,8 +78,8 @@
     </div> 
   </header>
   @yield('content')
-  <footer class="mt-auto text-white-50">
-    <p>Made by <a href="https://github.com/di3po" class="text-white">@di3po</a>.</p>
+  <footer class="mt-auto text-white-50 container py-5">
+    <p class="b-0">Made by <a href="https://github.com/di3po" class="text-white">@di3po</a>.</p>
   </footer>
 <!--footer class="container py-5">
   <div class="row">

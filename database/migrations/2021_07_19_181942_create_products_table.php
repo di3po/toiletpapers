@@ -21,8 +21,8 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique()->default('');
             $table->text('description');
-            $table->string('image')->nullable();
-            $table->enum('status', ["AVAILABLE","NOT"]);
+            $table->string('image');
+            $table->enum('status', ["AVAILABLE","NOT AVAILABLE"]);
             $table->boolean('featured')->default(0);
             $table->softDeletes();
             $table->timestamps();

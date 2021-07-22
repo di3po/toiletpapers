@@ -16,8 +16,9 @@ class CreateProductTagTable extends Migration
         Schema::disableForeignKeyConstraints();
 
         Schema::create('product_tag', function (Blueprint $table) {
-            $table->foreignId('product_id');
-            $table->foreignId('tag_id');
+            //$table->bigInteger('id');
+            $table->integer('product_id');
+            $table->integer('tag_id');
         });
 
         Schema::enableForeignKeyConstraints();

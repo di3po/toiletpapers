@@ -5,10 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str as Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class Product extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory, SoftDeletes;
+    use \App\Models\Traits\SetImageTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -24,6 +28,8 @@ class Product extends Model
         'status',
         'featured',
     ];
+
+    //protected $table = 'categories';
 
     /**
      * The attributes that should be cast to native types.
@@ -45,5 +51,18 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(\App\Models\Category::class);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::deleting(function ($obj) {
+            Storage::disk('public_folder')->delete($obj->image);
+        });
     }
 }
