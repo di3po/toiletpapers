@@ -11,7 +11,7 @@
           <div class="card mt-4">
             <img class="img-fluid" src="{{ asset('uploads/products_images/'.$d->image) }}" alt="Product image">
             <div class="card-body">
-              <a href="{{ $d->slug }}"><h5>{{ $d->title }}</h5></a>
+              <a href="{{ route('single-product', ['id'=>$d->id]) }}"><h5>{{ $d->title }}</h5></a>
               <small class="" style="color: grey;">{{ $d->status }}</small>
               <hr>
               <small class="mt-0">{!! strip_tags($d->description) !!}</small>
@@ -22,5 +22,6 @@
       </div>
     </div>
   </div>
+
 </main>
 @endsection

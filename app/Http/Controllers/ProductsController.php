@@ -13,6 +13,14 @@ class ProductsController extends Controller
             'data' => $data
         ]); */
         /* return view('products', compact('data')); */
-        return view('products')->with('data', $data);
+        return view('products.showAllProducts')->with('data', $data);
+    }
+
+    public function showOneProduct($id) {
+        $product = Product::find($id);
+        return view('products.showOneProduct', [
+           // here 'products' is db table name
+            'products' => $product
+        ]);
     }
 }

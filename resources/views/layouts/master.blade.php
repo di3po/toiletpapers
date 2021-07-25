@@ -46,7 +46,7 @@
       <a style="color:white;" href="/"><h3 class="float-md-start mb-0">Toiletpapers</h3></a>
       <nav class="nav fixed-top nav-masthead justify-content-center float-md-end mb-auto-1">
         <a class="nav-link" href="/products">Products</a>
-        <a class="nav-link" href="/aboutUs">About us</a>
+        <a class="nav-link" href="/about">About</a>
         <a class="nav-link" href="/contact">Contact</a>
       @auth
       <div class="dropdown">

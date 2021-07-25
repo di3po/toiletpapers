@@ -163,3 +163,9 @@ body {
   .product-image {
     width: 10rem;
   }
+
+  .detail-img {
+    height: 30rem;
+    left: 0;
+  }
+  

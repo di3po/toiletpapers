@@ -18,9 +18,13 @@ use App\Http\Controllers\SessionsController;
 */
 
 Route::get('/', [ToiletPaper::class, 'index'])->name('index');
+Route::get('/contact', [ToiletPaper::class, 'contact']);
+Route::get('/about', [ToiletPaper::class, 'about']);
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('sessions', [SessionsController::class, 'store']);
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 Route::get('/products', [ProductsController::class, 'show']);
+Route::get('products/{id}', [ProductsController::class, 'showOneProduct'])->name('single-product');
+

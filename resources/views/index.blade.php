@@ -20,7 +20,7 @@
 <main class="px-4 mb-auto mt-5">
   <div>
     <h1 style="font-size: 10rem;">Toiletpapers</h1>
-    <p class="lead">Get your toiletpapers here.</p>
+    <p class="lead mt-5">Get your toiletpapers here.</p>
     <p class="lead">
       <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Buy now</a>
     </p>
