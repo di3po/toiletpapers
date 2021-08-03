@@ -15,6 +15,7 @@
               <small class="" style="color: grey;">{{ $d->status }}</small>
               <hr>
               <small class="mt-0">{!! strip_tags($d->description) !!}</small>
+              <h4>{{$d->price}}</h4>
             </div>
           </div>
         </div>

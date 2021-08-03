@@ -17,12 +17,12 @@
   </header-->
 
 
-<main class="px-4 mb-auto mt-5">
+<main class="px-4 mb-auto mt-5 home-blade">
   <div>
     <h1 style="font-size: 10rem;">Toiletpapers</h1>
     <p class="lead mt-5">Get your toiletpapers here.</p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Buy now</a>
+      <a href="/products" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Buy now</a>
     </p>
   </div>
   <!-- <div id="carouselExampleIndicators" class="carousel slide mb-auto" data-bs-ride="carousel" style="">

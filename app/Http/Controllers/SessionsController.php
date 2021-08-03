@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Http\Request;
 
 class SessionsController extends Controller
 {
@@ -11,11 +12,12 @@ class SessionsController extends Controller
         return view('sessions.create');
     }
 
-    public function store(){
+    public function store(Request $req){
         // validate the request
         $attributes = request()->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
+            'id' => 'exists:App\Models\User,id'
         ]);
 
         // attempt to authenticate and log in the user
@@ -34,10 +36,15 @@ class SessionsController extends Controller
             ]);
         }
 
-        session()->regenerate();
+        /* session()->regenerate(); */
+
+        else{
+            $req->session()->put('user', $attributes);
+            return redirect('/')->with('success', 'Welcome back!');
+        }
         
         // redirect with success flash message
-        return redirect('/')->with('success', 'Welcome back!');
+        /* return redirect('/')->with('success', 'Welcome back!'); */
     }
 
     public function destroy(){

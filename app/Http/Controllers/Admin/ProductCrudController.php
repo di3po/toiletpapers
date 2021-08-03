@@ -61,6 +61,7 @@ class ProductCrudController extends CrudController
             //'prefix' => '/public/uploads/products_images',
         ]); */
         CRUD::column('image')->type('image');
+        CRUD::column('price');
         CRUD::column('status');
         CRUD::column('featured');
 
@@ -100,6 +101,7 @@ class ProductCrudController extends CrudController
             // 'disk'      => 's3_bucket', // in case you need to show images from a different disk
             // 'prefix'    => 'uploads/images/profile_pictures/' // in case your db value is only the file name (no path), you can use this to prepend your path to the image src (in HTML), before it's shown to the user;
         ]);
+        CRUD::field('price');
         CRUD::field('status');
         CRUD::field('featured');
 

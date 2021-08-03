@@ -3,3 +3,4 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('category') }}'><i class='nav-icon la la-question'></i> Categories</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('product') }}'><i class='nav-icon la la-question'></i> Products</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('tag') }}'><i class='nav-icon la la-question'></i> Tags</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('cart') }}'><i class='nav-icon la la-question'></i> Carts</a></li>
