@@ -50,7 +50,7 @@ class CartRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'Added',
         ];
     }
 }

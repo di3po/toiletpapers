@@ -13,10 +13,10 @@
             <h5>{!!strip_tags($products['description'])!!}</h5>
             <h5>Amount: </h5>
             <h4>{{$products['price']}}</h4>
-            <form action="/add_to_cart" method="POST">
-            @csrf
-            <input type="hidden" name="product_id" value="{{$products['id']}}">
-            <button class="btn btn-primary">ADD TO CART</button>
+            <form action="add_to_cart" method="POST">
+                @csrf
+                <input type="hidden" name="product_id" value="{{$products['id']}}">
+                <button class="btn btn-primary">ADD TO CART</button>
             </form>
             <button class="btn btn-success">BUY NOW</button>
         </div>

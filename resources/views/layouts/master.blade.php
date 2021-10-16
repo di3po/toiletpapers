@@ -8,45 +8,13 @@
   <meta name="generator" content="Hugo 0.84.0">
   <title>@yield('title')</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
-  <!-- Bootstrap core CSS -->
   <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- Custom styles for this template -->
   <link href="/css/style.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
 <body>
-  <?php
-
-  //use App\Http\Controllers\ProductsController;
-
-  //$total = ProductsController::cartItemAmount();
-  ?> -->
-  <!--nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Toiletpapers</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#products">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#aboutUs">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contacts">Contacts</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav-->
 
   <body class="d-flex h-100 text-center text-white bg-dark">
     <div class="cover-container d-flex w-100 h-100  mx-auto flex-column">
@@ -67,7 +35,9 @@
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Profile</a></li>
                 <li><a class="dropdown-item" href="#">Orders</a></li>
-                
+                @foreach($total as $t)
+                <li><a class="dropdown-item" href="#">Cart({{$t}})</a></li>
+                @endforeach
                 <hr>
                 <form action="/logout" method="POST">
                   @csrf
@@ -77,11 +47,6 @@
                 </form>
               </ul>
             </div>
-            <!-- <span>Welcome, {{ auth()->user()->name }}</span>
-      <form action="/logout" method="POST">
-        @csrf
-        <button type="submit">Log out</button>
-      </form>  -->
             @else
             <a class="nav-link" id="login-button" href="/login" style="color: green;">Login</a>
             <a class="nav-link" href="/register" style="color: blue;">Register</a>
@@ -93,52 +58,6 @@
       <footer class="mt-auto text-white-50 container py-5">
         <p class="b-0">Made by <a href="https://github.com/di3po" class="text-white">@di3po</a>.</p>
       </footer>
-      <!--footer class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-      <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Features</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Cool stuff</a></li>
-        <li><a class="link-secondary" href="#">Random feature</a></li>
-        <li><a class="link-secondary" href="#">Team feature</a></li>
-        <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-        <li><a class="link-secondary" href="#">Another one</a></li>
-        <li><a class="link-secondary" href="#">Last time</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Resources</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Resource name</a></li>
-        <li><a class="link-secondary" href="#">Resource</a></li>
-        <li><a class="link-secondary" href="#">Another resource</a></li>
-        <li><a class="link-secondary" href="#">Final resource</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>Resources</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Business</a></li>
-        <li><a class="link-secondary" href="#">Education</a></li>
-        <li><a class="link-secondary" href="#">Government</a></li>
-        <li><a class="link-secondary" href="#">Gaming</a></li>
-      </ul>
-    </div>
-    <div class="col-6 col-md">
-      <h5>About</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="link-secondary" href="#">Team</a></li>
-        <li><a class="link-secondary" href="#">Locations</a></li>
-        <li><a class="link-secondary" href="#">Privacy</a></li>
-        <li><a class="link-secondary" href="#">Terms</a></li>
-      </ul>
-    </div>
-  </div>
-</footer-->
       @if(session()->has('success'))
       <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 4000)" x-show="show" style="background-color: #00FF7F; position:fixed; bottom:1.5rem; right:0; border-radius:1.8rem; padding: 0.1rem 0.6rem; font-size: 0.8rem; text-align: center;">
         <p>{{ session('success') }}</p>
