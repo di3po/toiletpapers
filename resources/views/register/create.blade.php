@@ -1,4 +1,4 @@
-@extends('layouts.master');
+@extends('layouts.master')
 @section('content')
 <main class="px-2 mx-auto mt-5">
     <h1>Register</h1>

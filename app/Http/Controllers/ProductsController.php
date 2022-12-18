@@ -43,7 +43,10 @@ class ProductsController extends Controller
     static function cartItemAmount()
     {
         $user_id = auth()->user()->id;
-        $total = Cart::where('user_id', $user_id)->count();
+        $count = Cart::where('user_id', $user_id)->count();
+        var_dump($count);
+        //$total = $count != null ? $count : [];
+        $total = 2;
         return view('layouts.master', ['total' => $total]);
     }
 }

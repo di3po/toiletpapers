@@ -28,9 +28,9 @@ class CheckIfAdmin
      */
     private function checkIfUserIsAdmin($user)
     {
-        // return ($user->is_admin == 1);
+        //if($user->is_admin == 1) return true;
         return true;
-    }
+        }
 
     /**
      * Answer to unauthorized access request.

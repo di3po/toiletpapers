@@ -26,27 +26,9 @@
           <nav class="nav fixed-top nav-masthead justify-content-center float-md-end mb-auto-1">
             <a class="nav-link" href="/products">Products</a>
             <a class="nav-link" href="/about">About</a>
-            <a class="nav-link" href="/contact">Contact</a>
+            <a class="nav-link" href="/contact">Contacts</a>
             @auth
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle mb-auto mx-2 btn-outline-primary text-white btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ auth()->user()->name }}
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Orders</a></li>
-                @foreach($total as $t)
-                <li><a class="dropdown-item" href="#">Cart({{$t}})</a></li>
-                @endforeach
-                <hr>
-                <form action="/logout" method="POST">
-                  @csrf
-                  <div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-sm mx-auto" type="submit">Log out</button>
-                  </div>
-                </form>
-              </ul>
-            </div>
+            @yield('menu')
             @else
             <a class="nav-link" id="login-button" href="/login" style="color: green;">Login</a>
             <a class="nav-link" href="/register" style="color: blue;">Register</a>
